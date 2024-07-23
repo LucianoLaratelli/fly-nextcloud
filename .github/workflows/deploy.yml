@@ -20,7 +20,7 @@ jobs:
       fly_org: ${{ secrets.FLY_ORG }}
       fly_api_token: ${{ secrets.FLY_API_TOKEN }}
       fly_app_name: ${{ secrets.FLY_APP_NAME }}
-      fly_app_region: ${{ secrets.FLY_APP_REGION }}
+      fly_app_region: ${{ variables.FLY_APP_REGION }}
       fly_db_password: ${{ secrets.FLY_DB_PASSWORD }}
       fly_redis_password: ${{ secrets.FLY_REDIS_PASSWORD }}
       s3_bucket_name: ${{ secrets.S3_BUCKET_NAME }}
