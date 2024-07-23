@@ -105,7 +105,7 @@ jobs:
                          --no-deploy \
                          --org ${{ env.fly_org }} \
                          --region ${{ env.fly_app_region }} \
-                         --vm-memory "1024"
+                         --vm-memory=2048
 
 
               # Create volume for redis app
