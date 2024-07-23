@@ -103,10 +103,9 @@ jobs:
               flyctl launch --name ${{ env.fly_app_name }} \
                          --no-deploy \
                          --org ${{ env.fly_org }} \
-                         --region ${{ env.fly_app_region }}
+                         --region ${{ env.fly_app_region }} \
+                         --vm-memory 1024
 
-              # Scale nextcloud memory to 1GB
-              flyctl scale memory 1024
 
               # Create volume for redis app
               flyctl volumes create nextcloud_data \
