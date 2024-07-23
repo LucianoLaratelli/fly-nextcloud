@@ -93,7 +93,7 @@ jobs:
 
       - name: Deploy Nextcloud App
         run: |
-
+          set -x
           # Set FLY_API_TOKEN for user authentication
           export FLY_API_TOKEN=${{ env.fly_api_token }}
 
