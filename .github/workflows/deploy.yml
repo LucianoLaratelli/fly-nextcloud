@@ -109,10 +109,11 @@ jobs:
 
 
               # Create volume for redis app
-              yes | flyctl volumes create nextcloud_data \
+              flyctl volumes create nextcloud_data \
                  --size 1 \
                  --region ${{ env.fly_app_region }} \
-                 --app ${{ env.fly_app_name }}
+                 --app ${{ env.fly_app_name }} \
+                 --yes # required when running non-interactively
 
               # Clean up generated fly.toml config
               rm fly.toml
