@@ -96,6 +96,9 @@ jobs:
           set -x
           # Set FLY_API_TOKEN for user authentication
           export FLY_API_TOKEN=${{ env.fly_api_token }}
+          
+          # Enter Nextcloud config
+          cd nextcloud
 
           # Check if the nextcloud app has already been deployed
           if [ -z "$(flyctl apps list | grep '${{ env.fly_app_name }}[^-]')" ]; then
@@ -117,8 +120,7 @@ jobs:
               rm fly.toml
           fi
 
-          # Enter Nextcloud config
-          cd nextcloud
+
 
           # Generate Nextcloud config file
           sed -i "s/%fly_app_name%/${{ env.fly_app_name }}/g" fly.toml
